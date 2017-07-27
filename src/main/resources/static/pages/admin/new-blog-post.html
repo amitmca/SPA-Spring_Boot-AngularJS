@@ -1,0 +1,57 @@
+<br/><br/>
+<div class="row featurette">
+	<div class="container blue-spa-main-content col-md-7">
+		<br/>
+		
+		
+		<form id="contact-form" method="POST" ng-submit="newBlog.postBlog()" role="form">
+
+	    <div class="messages"></div>
+	
+	    <div class="controls">
+	
+	        <div class="row">
+	            <div class="col-md-6">
+	                <div class="form-group">
+	                    <label for="topic">Topic</label>
+	                    
+	                    <input id="topic" type="text" name="topic" class="form-control" placeholder="Please enter the topic of your post" 
+	                    	required="required" data-error="required." ng-model="newBlog.blog.topic" />
+	                    <div class="help-block with-errors"></div>
+	                </div>
+	            </div>
+	            <div class="col-md-6">
+	                <div class="form-group">
+	                    <label for="title">Title</label>
+	                    <input id="title" type="text" name="title" class="form-control" placeholder="Please enter the title for your post" 
+	                    	required="required" data-error="required." ng-model="newBlog.blog.title"/>
+	                    <div class="help-block with-errors"></div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="row">
+	            <div class="col-md-12">
+	                <div class="form-group">
+	                    <label for="content">Post Content</label>
+	                    <textarea id="content" name="content" class="form-control" placeholder="Enter your post here." rows="4" 
+	                    	required="required" data-error="requeired" ng-model="newBlog.blog.content"></textarea>
+	                    <div class="help-block with-errors"></div>
+	                </div>
+	            </div>
+	            
+	            <div class="col-md-12">
+	            <br/>
+	                <input type="submit" class="btn btn-success btn-send" value="Post"/>
+	            </div>
+	        </div>
+	    </div>
+	
+	</form>
+
+		<br/><br/>
+		<div><p>{{newBlog.saveContent.saved}}</p></div>
+		
+		<br/>
+	</div>
+</div>

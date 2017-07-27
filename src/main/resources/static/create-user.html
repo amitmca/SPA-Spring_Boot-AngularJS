@@ -1,13 +1,23 @@
-<div id="feedback"></div>
+<br/><br/>
+<div class="row featurette">
+	<div class="container blue-spa-main-content col-md-7">
+		<br/>
+		
+			<h1>Greeting</h1>
+			<div id="feedback"></div>
 
-<form action="/add" method="POST">
-    <div class="form-group">
-        <label for="username">Username:</label> <input type="text"
-            class="form-control" id="username" name="username" ng-model="createuser.credentials.username"/>
-    </div>
-    <div class="form-group">
-        <label for="password">Password:</label> <input type="password"
-            class="form-control" id="password" name="password" ng-model="createuser.credentials.password"/>
-    </div>
-     <button type="submit" id="btn-create" class="btn btn-primary btn-lg">Create Account</button>
-</form>
+			<form ng-submit="createuser.createUser()" role="form">
+			    <div class="form-group">
+			        <label for="username">Username:</label> <input type="text"
+			            class="form-control" id="username" name="username" ng-model="createuser.credentials.username"/>
+			    </div>
+			    <div class="form-group">
+			        <label for="password">Password:</label> <input type="password"
+			            class="form-control" id="password" name="password" ng-model="createuser.credentials.password"/>
+			    </div>
+			     <button type="submit" id="btn-create" class="btn btn-primary btn-lg">Create Account</button>
+			</form>
+			
+		<br/>
+	</div>
+</div>

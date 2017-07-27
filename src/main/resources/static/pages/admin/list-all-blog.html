@@ -2,6 +2,7 @@
 <div class="row featurette"  xmlns:th="http://www.thymeleaf.org/">
 	<div class="container blue-spa-main-content col-md-7">
 		<br/>
+			<h1>Greetings</h1>
 			<!-- blog post once logged in -->
 			<div ng-show="authenticated">
 			<br/><br/>
@@ -9,9 +10,9 @@
 					
 					<br/><br/>
 					<table>
-						<tr ng-repeat-start="blog in controller.data.blogList">
+						<tr ng-repeat-start="blog in listBlog.data.blogList">
 							<!-- title of blog post -->
-							<td><h2>Title: {{blog.title}}</h2></td>
+							<td><h2>{{blog.title}}</h2></td>
 						</tr>
 						<tr>
 							<td>
@@ -52,20 +53,16 @@
 					</table>
 										
 					<br/><br/>
-					
 					<!--  -->
 					<div align="center">
 						
-							<a href="#/list-all">
-								<button class="btn btn-warning">List all blog posts!</button>
+							<a href="#/">
+								<button class="btn btn-warning">Top 5 posts!</button>
 							</a>
 						
 					</div>
 			</div>
-			<!-- not logged in yet -->
-			<div ng-show="!authenticated">
-				Hello visitor! Login to check out the new blog posts!
-			</div>
+
 		<br/>
 	</div>
 </div>

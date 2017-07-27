@@ -1,0 +1,24 @@
+<br/><br/>
+<div class="row featurette">
+	<div class="container blue-spa-main-content col-md-7">
+		<br/>
+
+					<table>
+						<tr ng-repeat-start="blog in controller.data.blog">
+							<td><h2>Title: {{blog.title}}</h2></td>
+						</tr>
+						<tr>
+							<td>Topic: {{blog.topic}}</td>
+						</tr>
+						<tr>
+							<td>Date: {{blog.date}}</td>
+						</tr>
+						<tr ng-repeat-end>							
+							<td>Post</td>
+							<td>{{blog.content}}</td>					
+						</tr>
+					</table>
+			
+		<br/>
+	</div>
+</div>

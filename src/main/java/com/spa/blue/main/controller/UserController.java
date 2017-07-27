@@ -4,11 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.springframework.stereotype.*;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import com.spa.blue.main.model.UserData;
+
+@RestController
 public class UserController {
 
 	/**
@@ -19,18 +25,22 @@ public class UserController {
 	 * @throws Exception 
 	 */
 	
-	@RequestMapping(path="/add")
-	public String addNewUser (@RequestParam String username
-			, @RequestParam String password) throws Exception {
+	// use this request mapping for post containing text
+	@RequestMapping(path="/add", method = RequestMethod.POST, 
+				consumes = MimeTypeUtils.APPLICATION_JSON_VALUE)
+	public Map<String, Object> addNewUser(@RequestBody UserData userData, HttpServletResponse response) {
 		
+		
+		Map<String, Object> model = new HashMap<String, Object>();
+			
         //Get connection
     	Connection con;
         Connection con2;
         Statement stmt = null;
                 try{
-                    String MySQL = "jdbc:mysql://localhost:3306/?user=&password=&useSSL=false";
-                    String SQL = "insert into users (username, password, enabled) values ('" + username + "', '" + password + "', true)";
-                    String SQL2 = "insert into user_roles (username, role) values ('" + username + "', 'ROLE_USER')";
+                    String MySQL = "jdbc:mysql://localhost:3306/spa_blue?user= &password= &useSSL=false";
+                    String SQL = "insert into users (username, password, enabled) values ('" + userData.getUsername() + "', '" + userData.getPassword() + "', true)";
+                    String SQL2 = "insert into user_roles (username, role) values ('" + userData.getUsername() + "', 'ROLE_USER')";
                     //Opens connection to the new selection
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection(MySQL);
@@ -45,7 +55,10 @@ public class UserController {
                 } catch (ClassNotFoundException ex) {
                     System.out.println(ex.getMessage());
                 }
-        return "redirect:/";
+                
+        String saved = "The user " + userData.getUsername() + " has been saved.";
+        model.put("saved", saved);
+        return model;
 	}
 	
 }
