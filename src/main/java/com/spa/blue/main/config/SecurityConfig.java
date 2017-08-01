@@ -11,6 +11,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Region;
@@ -28,9 +29,10 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 			  http
 			  .httpBasic().and()
 			  .authorizeRequests()
-			  	.antMatchers("/index.html", "/home.html", "/login.html", "/", "/create-user.html",
+			  	.antMatchers("/index.html", "/pages/home.html", "/pages/login.html", "/", "/pages/create-user.html",
 			  			"/add", "/login", "/user").permitAll()
-			  	.anyRequest().authenticated();
+			  	.anyRequest().authenticated()
+			  	.and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 		  }
 	    
 		  // these are the credentials to login to database

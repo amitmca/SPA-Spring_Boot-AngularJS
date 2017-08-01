@@ -16,7 +16,7 @@
 
 <body ng-app="hello" ng-cloak="" class="ng-cloak">
 
-	<div ng-controller="navigation as nav">
+	<div ng-controller="login as nav">
 		<nav class="navbar navbar-toggleable-md navbar-inverse" style="background-color:  #292b2c;">
 				  <button class="navbar-toggler navbar-toggler-center" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -36,15 +36,23 @@
 		</nav>
 	</div>
 	<br/>
-	<div class="row featurette">
-		<div align="center" class="container col-med-9">
-			<h1>Welcome to the blog, thanks for stopping by!</h1>
-		</div>
-	</div>
+
 	
 	<div ng-view=""></div>
+	
+	
 	<script src="js/angular-bootstrap.js" type="text/javascript"></script>
-	<script src="js/hello.js" type="text/javascript"></script>
+	<script src='js/vendor/angular-file-model.js'></script>
+	<script src="js/app.js" type="text/javascript"></script>
+	<script src="js/controller/home-controller.js" type="text/javascript"></script>
+	<script src="js/controller/admin-controller.js" type="text/javascript"></script>
+	<script src="js/controller/create-user-controller.js" type="text/javascript"></script>
+	<script src="js/controller/list-blog-controller.js" type="text/javascript"></script>
+	<script src="js/controller/login-controller.js" type="text/javascript"></script>
+	<script src="js/controller/new-blog-controller.js" type="text/javascript"></script>
+	<script src="js/controller/saved-controller.js" type="text/javascript"></script>
+	<script src="js/controller/view-blog-controller.js" type="text/javascript"></script>
+	<script src="js/controller/upload-controller.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.14/angular-resource.min.js" integrity="sha256-u78QjzRMX7sb/Qqa+VfHYyupU1L0tbNheqUWKfE3tOw=" crossorigin="anonymous"></script>
 	
 

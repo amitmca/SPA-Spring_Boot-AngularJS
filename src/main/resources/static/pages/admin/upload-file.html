@@ -1,0 +1,26 @@
+<div class="row featurette">
+	<div align="center" class="container col-med-9">
+		<h1 ng-bind="mainHeader"></h1>
+	</div>
+</div>
+
+<br/><br/>
+<div class="row featurette">
+	<div class="container blue-spa-main-content col-md-7">
+		<br/>
+
+		<form class="form-group" ng-submit="upload.uploadFile()" method="POST" 
+			enctype="multipart/form-data" ng-model="formData">        
+		
+			 	<div class="form-group">
+			 		<input type='file' file-model='fileModel'>
+					<div class="help-block with-errors"></div> <br/>
+				
+			 		<small id="fileHelp" class="form-text text-muted">Select a image from your computer to upload.</small>
+			 	</div>
+					 	
+			 	<br/>
+			    <button type="submit" id="upload-button">Upload to S3</button>
+		</form>
+	</div>
+</div>

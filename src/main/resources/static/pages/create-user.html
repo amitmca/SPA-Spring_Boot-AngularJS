@@ -1,0 +1,57 @@
+<div class="row featurette">
+	<div align="center" class="container col-med-9">
+		<h1 ng-bind="mainHeader"></h1>
+	</div>
+</div>
+
+<br/><br/>
+<div class="row featurette">
+	<div class="container blue-spa-main-content col-md-7">
+		<br/>
+		
+			<h1>Greeting</h1>
+			<div id="feedback"></div>
+
+			<form ng-submit="createuser.createUser()" role="form">
+			
+				<div class="form-group">
+					<label for="firstName">First name:</label>
+					<input type="text" class="form-control" id="firstName" name="firstName"
+						ng-model="createuser.credentials.firstName" required="required" />
+					<div class="help-block with-errors"></div>
+				</div>
+				
+				<div class="form-group">
+					<label for="lastName"">Last name:</label>
+					<input type="text" class="form-control" id="lastName" name="lastName"
+						ng-model="createuser.credentials.lastName" required="required" />
+					<div class="help-block with-errors"></div>
+				</div>
+				
+			    <div class="form-group">
+			        <label for="username">Username:</label> <input type="text"
+			            class="form-control" id="username" name="username" 
+			            ng-model="createuser.credentials.username" required="required" />
+			    	<div class="help-block with-errors"></div>
+			    </div>
+			    
+			    <div class="form-group">
+			        <label for="password">Password:</label> <input type="password"
+			            class="form-control" id="password" name="password" 
+			            ng-model="createuser.credentials.password" required="required" />
+			    	<div class="help-block with-errors"></div>
+			    </div>
+			    
+			    <div class="form-group">
+			    	<label for="email">Email:</label>
+			    	<input type="email" class="form-control" id="email" name="email"
+			    		ng-model="createuser.credentials.email" required="required" />
+			    	<div class="help-block with-errors"></div>
+			    </div>
+			    
+			     <button type="submit" id="btn-create" class="btn btn-primary btn-lg">Create Account</button>
+			</form>
+			
+		<br/>
+	</div>
+</div>

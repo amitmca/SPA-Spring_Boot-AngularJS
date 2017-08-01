@@ -1,0 +1,29 @@
+<div class="row featurette">
+	<div align="center" class="container col-med-9">
+		<h1 ng-bind="mainHeader"></h1>
+	</div>
+</div>
+
+<br/><br/>
+<div class="row featurette">
+	<div class="container blue-spa-main-content col-md-7">
+		<br/>
+			<div class="alert alert-danger" ng-show="controller.error">
+			    There was a problem logging in. Please try again.
+			</div>
+			<form role="form" ng-submit="controller.login()">
+			    <div>
+			        <label for="username">Username:</label> <input type="text"
+			            class="form-control" id="username" name="username" ng-model="controller.credentials.username"/>
+			    </div>
+			    <div>
+			        <label for="password">Password:</label> <input type="password"
+			            class="form-control" id="password" name="password" ng-model="controller.credentials.password"/>
+			    </div>
+			    <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+
+			
+		<br/>
+	</div>
+</div>

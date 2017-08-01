@@ -15,7 +15,7 @@
 					
 					<br/><br/>
 					<table>
-						<tr ng-repeat-start="blog in listBlog.data.blogList">
+						<tr ng-repeat-start="blog in controller.data.blogList">
 							<!-- title of blog post -->
 							<td><h2>{{blog.title}}</h2></td>
 						</tr>
@@ -56,19 +56,24 @@
 						<tr ng-repeat-end>					
 							<td>Written by: {{blog.author}}<br/><br/></td>						
 						</tr>
+						
 					</table>
 										
 					<br/><br/>
+					
 					<!--  -->
 					<div align="center">
 						
-							<a href="#/">
-								<button class="btn btn-warning">Top 5 posts!</button>
+							<a href="#/list-all">
+								<button class="btn btn-warning">List all blog posts!</button>
 							</a>
 						
 					</div>
 			</div>
-
+			<!-- not logged in yet -->
+			<div ng-show="!authenticated">
+				Hello visitor! Login to check out the new blog posts!
+			</div>
 		<br/>
 	</div>
 </div>
